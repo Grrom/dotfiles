@@ -1,0 +1,9 @@
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[merge]
+	tool = nvim
+[core]
+	editor = nvim
+[user]
+	email = josejeromelalunio@gmail.com
+	name = Jerome
