@@ -1,0 +1,6 @@
+{
+	"coc.preferences.formatOnType": true,
+	"coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "sh", "dart"],
+  "flutter.sdk.path": "/home/jerome/code/dart/channels/stable",
+  "flutter.provider.hot-reload":false
+}
