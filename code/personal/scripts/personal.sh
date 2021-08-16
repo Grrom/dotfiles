@@ -7,7 +7,7 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 
 # paths
-export PATH="$PATH:~/code/dart/channels/stable/bin"
+export PATH="$PATH:/code/dart/channels/stable/bin"
 
 
 # commands

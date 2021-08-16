@@ -22,17 +22,24 @@ set colorcolumn=80
 " PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " navigation
 Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" language support
 Plug 'dart-lang/dart-vim-plugin'
 
-Plug 'git@github.com:Raimondi/delimitMate.git'
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'natebosch/dartlang-snippets'
 
+" utils
 Plug 'git@github.com:krisajenkins/vim-projectlocal.git'
+Plug 'git@github.com:Raimondi/delimitMate.git'
 
 " themes
 Plug 'arcticicestudio/nord-vim'
@@ -64,6 +71,8 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+
+let g:UltiSnipsExpandTrigger="<S-Tab>"
 
 " integrated terminal
 " open integrated terminal 
@@ -122,3 +131,4 @@ nnoremap <C-q> :bd <cr>
 "Flutter
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+nnoremap <leader>fc :CocList --input=flutter commands <cr>
