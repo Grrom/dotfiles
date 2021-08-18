@@ -1,0 +1,95 @@
+{
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "editor.lineNumbers": "relative",
+
+
+    //vim
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+      },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      // editing
+      {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+      },
+      {
+        "before": ["<leader>", "w"],
+        "commands": [
+          "workbench.action.files.save"
+        ]
+      },
+      {
+        "before": ["<leader>", "q"],
+        "commands":[
+          "workbench.action.closeActiveEditor"
+        ]
+      },
+      {
+        "before": ["<leader>", "v"],
+        "commands":[
+          "workbench.action.splitEditor"
+        ]
+      },
+      {
+        "before": ["<leader>", "ff"],
+        "commands":[
+          "search.action.openNewEditor"
+        ]
+      },
+      // navigation
+      {
+        "before": ["<leader>", "/"],
+        "commands": [":noh <cr>"]
+      },
+      {
+        "before": ["<C-h>"],
+        "commands":[
+          "workbench.action.previousEditor"
+        ]
+      },
+      {
+        "before": ["<C-l>"],
+        "commands":[
+          "workbench.action.nextEditor"
+        ]
+      },
+      // controls
+      {
+        "before": ["<leader>", "n"],
+        "commands":[
+          "workbench.view.explorer"
+        ]
+      },
+      {
+        "before": ["<leader>", "s"],
+        "commands":[
+          "workbench.action.toggleSidebarVisibility"
+        ]
+      },
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false,
+      "<C-j>": false,
+      "<C-k>": false
+    }
+}

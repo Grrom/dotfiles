@@ -5,12 +5,14 @@ DefaultProfile=mine.profile
 Favorites=Breath2.profile
 
 [KonsoleWindow]
-SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
 
 [MainWindow]
 HDMI-A-0 DisplayPort-0 Window-Maximized 1920x1080=true
-HDMI-A-0 XPosition 1920x1080=1078
-HDMI-A-0 YPosition 1920x1080=500
+HDMI-A-0 Height 1920x1080=480
+HDMI-A-0 Width 1920x1080=963
+HDMI-A-0 XPosition 1920x1080=435
+HDMI-A-0 YPosition 1920x1080=292
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAAAx4AAAHLAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
 StatusBar=Disabled
