@@ -5,9 +5,14 @@ alias bashrc="nvim ~/.bashrc"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
+alias memorylamp="code ~/code/dart/memorylamp-mobile"
+
+alias note="nvim ~/code/personal/personalStuff/notes.json"
+alias anime="cd ~/code/personal/Grrom.github.io/anime/ ; node anime_server.js"
+
 
 # paths
-export PATH="$PATH:/code/dart/channels/stable/bin"
+export PATH="$PATH:~/code/dart/channels/stable/bin"
 
 
 # commands
@@ -25,4 +30,40 @@ emu(){
     "l") ~/Android/Sdk/tools/emulator -list-avds;;
     "o") echo "Opening $OPEN" ; ~/Android/Sdk/tools/emulator @$OPEN;;
   esac
+}
+
+# for moving animes from download folder
+animove(){
+  ANIMENAME=$1
+  WORDS_TO_TRIM1=$2
+  WORDS_TO_TRIM2=$3
+  
+  DIR=~/code/personal/Grrom.github.io/anime/anime/$ANIMENAME
+
+  mkdir "$DIR" 
+  mv *"$ANIMENAME"* "$DIR"
+
+  cd "$DIR"
+
+  if [ -n "$WORDS_TO_TRIM2" ]
+  then
+  for f in *"$ANIMENAME"*; do mv -- "$f" "${f/$WORDS_TO_TRIM2/}"; done
+  fi
+
+  if [ -n "$WORDS_TO_TRIM1" ]
+  then
+  for f in *"$ANIMENAME"*; do mv -- "$f" "${f/$WORDS_TO_TRIM1/}"; done
+  fi
+
+  cd ..
+
+  mv "$ANIMENAME" "${ANIMENAME//_/ }"
+#  while read WORDS_TO_TRIM; do
+#      for f in *.mp4; do mv -- "$f" "${f/$WORDS_TO_TRIM/}"; done
+#      if [ "$WORDS_TO_TRIM" = "done" ] 
+#      then break
+#      fi
+#    done 
+
+
 }

@@ -51,7 +51,7 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " change theme
-colorscheme gruvbox
+colorscheme nord
 "highlight Normal guibg=none
 if (has("termguicolors"))
   set termguicolors
