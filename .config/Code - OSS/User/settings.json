@@ -69,6 +69,22 @@
     // navigation
     {
       "before": [
+        "<C-[>",
+      ],
+      "commands": [
+        "editor.action.marker.prevInFiles"
+      ]
+    },
+    {
+      "before": [
+        "<C-]>",
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
         "<leader>",
         "/"
       ],
