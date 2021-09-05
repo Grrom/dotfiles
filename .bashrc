@@ -139,3 +139,5 @@ ex ()
 # sourcing
 source ~/code/personal/scripts/personal.sh
 
+
+alias luamake=/home/jerome/.config/nvim/language-servers/lua-language-server/3rd/luamake/luamake
