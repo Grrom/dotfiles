@@ -147,9 +147,7 @@
     },
     {
       "before": [
-        "<leader>",
-        "k",
-        "w"
+        "<C-q>",
       ],
       "commands": [
         "workbench.action.closeAllEditors"
@@ -170,9 +168,10 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
-    "<C-j>": false,
     "<C-k>": false,
+    "<C-j>": false,
     "<C-y>": false,
   },
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "diffEditor.ignoreTrimWhitespace": false
 }

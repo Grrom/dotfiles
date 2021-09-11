@@ -2,13 +2,13 @@
 
 # aliases
 alias bashrc="nvim ~/.bashrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
+alias nvimrc="cd ~/.config/nvim/; nvim ."
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias memorylamp="code ~/code/dart/memorylamp-mobile"
 
 alias note="nvim ~/code/personal/personalStuff/notes.json"
-alias anime="cd ~/code/personal/Grrom.github.io/anime/ ; node anime_server.js"
+alias aniserve="cd ~/code/personal/Grrom.github.io/anime/ ; node anime_server.js"
 
 
 # paths
@@ -37,8 +37,10 @@ animove(){
   ANIMENAME=$1
   WORDS_TO_TRIM1=$2
   WORDS_TO_TRIM2=$3
+
+  ANIME_FOLDER_NAME="${ANIMENAME//_/ }"
   
-  DIR=~/code/personal/Grrom.github.io/anime/anime/$ANIMENAME
+  DIR=~/code/personal/Grrom.github.io/anime/anime/$ANIME_FOLDER_NAME
 
   mkdir "$DIR" 
   mv *"$ANIMENAME"* "$DIR"
@@ -57,7 +59,7 @@ animove(){
 
   cd ..
 
-  mv "$ANIMENAME" "${ANIMENAME//_/ }"
+#  mv "$ANIMENAME" "${ANIMENAME//_/ }"
 #  while read WORDS_TO_TRIM; do
 #      for f in *.mp4; do mv -- "$f" "${f/$WORDS_TO_TRIM/}"; done
 #      if [ "$WORDS_TO_TRIM" = "done" ] 
