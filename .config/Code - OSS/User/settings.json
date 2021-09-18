@@ -112,6 +112,15 @@
     {
       "before": [
         "<leader>",
+        "qq"
+      ],
+      "commands": [
+        "workbench.action.closeAllGroups"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "n"
       ],
       "commands": [

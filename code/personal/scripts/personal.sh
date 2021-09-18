@@ -8,7 +8,7 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias memorylamp="code ~/code/dart/memorylamp-mobile"
 
 alias note="nvim ~/code/personal/personalStuff/notes.json"
-alias aniserve="cd ~/code/personal/Grrom.github.io/anime/ ; node anime_server.js"
+alias aniserve="cd /run/media/jerome/New\ Volume/anime/ ; node anime_server.js"
 
 
 # paths
@@ -40,7 +40,7 @@ animove(){
 
   ANIME_FOLDER_NAME="${ANIMENAME//_/ }"
   
-  DIR=~/code/personal/Grrom.github.io/anime/anime/$ANIME_FOLDER_NAME
+  DIR=/run/media/jerome/New\ Volume/anime/anime/$ANIME_FOLDER_NAME
 
   mkdir "$DIR" 
   mv *"$ANIMENAME"* "$DIR"
