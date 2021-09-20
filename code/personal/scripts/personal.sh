@@ -1,24 +1,41 @@
 #!/bin/bash
 
-# aliases
-alias bashrc="nvim ~/.bashrc"
-alias nvimrc="cd ~/.config/nvim/; nvim ."
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+#__     __         _       _     _           
+#\ \   / /_ _ _ __(_) __ _| |__ | | ___  ___ 
+# \ \ / / _` | '__| |/ _` | '_ \| |/ _ \/ __|
+#  \ V / (_| | |  | | (_| | |_) | |  __/\__ \
+#   \_/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/
+export PATH="$PATH:~/code/dart/channels/stable/bin"
+export external="/run/media/jerome/MANJARO"
 
+#    _    _ _                     
+#   / \  | (_) __ _ ___  ___  ___ 
+#  / _ \ | | |/ _` / __|/ _ \/ __|
+# / ___ \| | | (_| \__ \  __/\__ \
+#/_/   \_\_|_|\__,_|___/\___||___/
+
+# quick edits
+alias nvimrc="cd ~/.config/nvim/; nvim ."
+alias bashrc="nvim ~/.bashrc"
+alias personalrc="nvim ~/code/personal/scripts/personal.sh"
+alias note="nvim ~/code/personal/personalStuff/notes.json"
+
+# command shortcuts
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias aniserve="cd ${external}/anime/ ; node anime_server.js"
 alias memorylamp="code ~/code/dart/memorylamp-mobile"
 
-alias note="nvim ~/code/personal/personalStuff/notes.json"
-alias aniserve="cd /run/media/jerome/MANJARO/anime/ ; node anime_server.js"
+#  ____                                          _     
+# / ___|___  _ __ ___  _ __ ___   __ _ _ __   __| |___ 
+#| |   / _ \| '_ ` _ \| '_ ` _ \ / _` | '_ \ / _` / __|
+#| |__| (_) | | | | | | | | | | | (_| | | | | (_| \__ \
+# \____\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|___/
 
+figlets(){ # because I'm too lazy to pipe it myself 😉
+  echo "$1" | figlet 
+}
 
-# paths
-export PATH="$PATH:~/code/dart/channels/stable/bin"
-
-
-# commands
-
-# android emulators 
-emu(){
+emu(){ # emulator shortcut
   ACTION=$1
   OPEN=$2
 
@@ -32,15 +49,21 @@ emu(){
   esac
 }
 
-# for moving animes from download folder
-animove(){
+animove(){ # for moving animes from download folder
   ANIMENAME=$1
   WORDS_TO_TRIM1=$2
   WORDS_TO_TRIM2=$3
 
+  # for movies 
+  if [[ "$ANIMENAME" == "movies" ]]
+  then 
+    for f in *.mp4; do mv -- "$f" "movies$f";
+    done
+  fi;
+
   ANIME_FOLDER_NAME="${ANIMENAME//_/ }"
   
-  DIR=/run/media/jerome/MANJARO/anime/anime/$ANIME_FOLDER_NAME
+  DIR="${external}/anime/anime/${ANIME_FOLDER_NAME}"
 
   mkdir "$DIR" 
   mv *"$ANIMENAME"* "$DIR"
@@ -56,9 +79,7 @@ animove(){
   then
   for f in *"$ANIMENAME"*; do mv -- "$f" "${f/$WORDS_TO_TRIM1/}"; done
   fi
-
   cd ..
-
 #  mv "$ANIMENAME" "${ANIMENAME//_/ }"
 #  while read WORDS_TO_TRIM; do
 #      for f in *.mp4; do mv -- "$f" "${f/$WORDS_TO_TRIM/}"; done
@@ -66,6 +87,5 @@ animove(){
 #      then break
 #      fi
 #    done 
-
-
 }
+
