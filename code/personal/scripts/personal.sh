@@ -24,6 +24,7 @@ alias note="nvim ~/code/personal/personalStuff/notes.json"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias aniserve="cd ${external}/anime/ ; node anime_server.js"
 alias memorylamp="code ~/code/dart/memorylamp-mobile"
+alias dating="code ~/code/dart/boiling_waters_dating"
 
 #  ____                                          _     
 # / ___|___  _ __ ___  _ __ ___   __ _ _ __   __| |___ 
@@ -41,6 +42,7 @@ emu(){ # emulator shortcut
 
   case "$OPEN" in 
     "sm") OPEN="Pixel_3a_API_24";;
+    "l") OPEN="Pixel_C_API_22";;
   esac
   
   case "$ACTION" in
