@@ -22,9 +22,10 @@ alias note="nvim ~/code/personal/personalStuff/notes.json"
 
 # command shortcuts
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias aniserve="cd ${external}/anime/ ; node anime_server.js"
+alias aniserve="mountExternal ; cd ${external}/anime/ ; node anime_server.js"
 alias memorylamp="code ~/code/dart/memorylamp-mobile"
 alias dating="code ~/code/dart/boiling_waters_dating"
+
 
 #  ____                                          _     
 # / ___|___  _ __ ___  _ __ ___   __ _ _ __   __| |___ 
@@ -51,7 +52,25 @@ emu(){ # emulator shortcut
   esac
 }
 
+externalMounted(){
+  HELLO=$(ls $external | wc -l)
+  if [[ $HELLO == 0 ]]; 
+  then echo false;
+  else echo true;
+  fi
+}
+
+mountExternal(){
+  if [ $(externalMounted) == false ];
+  then 
+    echo "mounting $external..."
+    echo "$(udisksctl mount -b /dev/sda3)"
+  fi
+}
+
 animove(){ # for moving animes from download folder
+  $(mountExternal)
+
   ANIMENAME=$1
   WORDS_TO_TRIM1=$2
   WORDS_TO_TRIM2=$3
