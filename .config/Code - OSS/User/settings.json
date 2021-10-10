@@ -42,6 +42,15 @@
     {
       "before": [
         "<leader>",
+        "f"
+      ],
+      "commands": [
+        "editor.toggleFold"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "q"
       ],
       "commands": [

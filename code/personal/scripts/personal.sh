@@ -52,6 +52,11 @@ emu(){ # emulator shortcut
   esac
 }
 
+shrinkVideo(){
+  FILENAME=$1
+  ffmpeg -i $FILENAME -vcodec libx265 -crf 28 output.mp4;
+}
+
 externalMounted(){
   HELLO=$(ls $external | wc -l)
   if [[ $HELLO == 0 ]]; 
