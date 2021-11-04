@@ -23,8 +23,10 @@ alias note="nvim ~/code/personal/personalStuff/notes.json"
 # command shortcuts
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias aniserve="mountExternal ; cd ${external}/anime/ ; node anime_server.js"
-alias memorylamp="code ~/code/dart/memorylamp-mobile"
-alias dating="code ~/code/dart/boiling_waters_dating"
+
+# sourcing stuff
+source ~/code/personal/scripts/boiling_waters.sh
+source ~/code/personal/scripts/project_shortcuts.sh
 
 
 #  ____                                          _     
@@ -53,8 +55,7 @@ emu(){ # emulator shortcut
 }
 
 shrinkVideo(){
-  FILENAME=$1
-  ffmpeg -i $FILENAME -vcodec libx265 -crf 28 output.mp4;
+  ffmpeg -i $1 -vcodec libx265 -crf 28 output.mp4;
 }
 
 externalMounted(){
@@ -74,7 +75,7 @@ mountExternal(){
 }
 
 animove(){ # for moving animes from download folder
-  $(mountExternal)
+  mountExternal
 
   ANIMENAME=$1
   WORDS_TO_TRIM1=$2
