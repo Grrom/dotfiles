@@ -4,3 +4,6 @@ Skin=breath2_dark
 
 [Desktop Entry]
 DefaultProfile=dropdown.profile
+
+[Window]
+Height=46
