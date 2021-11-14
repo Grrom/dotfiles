@@ -55,7 +55,7 @@ emu(){ # emulator shortcut
 }
 
 shrinkVideo(){
-  ffmpeg -i $1 -vcodec libx265 -crf 28 output.mp4;
+  ffmpeg -i $1 -vcodec libx265 -crf 28 -pix_fmt yuv420p output.mp4;
 }
 
 externalMounted(){
