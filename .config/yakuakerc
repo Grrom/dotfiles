@@ -1,9 +1,13 @@
 [Appearance]
 HideSkinBorders=true
-Skin=breath2_dark
+Skin=breath-dark
 
 [Desktop Entry]
 DefaultProfile=dropdown.profile
 
+[Dialogs]
+FirstRun=false
+
 [Window]
 Height=46
+KeepOpen=false
