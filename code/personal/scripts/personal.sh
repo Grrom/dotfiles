@@ -6,6 +6,9 @@
 #  \ V / (_| | |  | | (_| | |_) | |  __/\__ \
 #   \_/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/
 export PATH="$PATH:~/code/dart/channels/stable/bin"
+export PATH="$PATH":"$HOME/code/dart/channels/stable/bin/cache/dart-sdk/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 export external="/run/media/jerome/MANJARO"
 
 #    _    _ _                     
@@ -55,7 +58,7 @@ emu(){ # emulator shortcut
 }
 
 shrinkVideo(){
-  ffmpeg -i $1 -vcodec libx265 -crf 28 -pix_fmt yuv420p output.mp4;
+  ffmpeg -i $1 -vcodec libx264 -crf 28 -pix_fmt yuv420p output.mp4;
 }
 
 externalMounted(){

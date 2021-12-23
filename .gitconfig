@@ -7,3 +7,5 @@
 [user]
 	email = josejeromelalunio@gmail.com
 	name = Jerome
+[pull]
+	rebase = false
